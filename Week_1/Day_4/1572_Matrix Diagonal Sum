@@ -1,0 +1,19 @@
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int n = mat.length ;
+        int sum = 0;
+
+        for(int i = 0; i < n; i++){
+            sum += mat[i][i];  // primary diagonal element 
+            sum += mat[i][n - i - 1];  //  secondary diagonal element
+
+           
+        }
+
+         if(n % 2 == 1){  // if n is odd then subtaract middle  element as it will added twice
+                sum -= mat[n / 2][n/2];
+            }
+            
+        return sum;
+    }
+}
